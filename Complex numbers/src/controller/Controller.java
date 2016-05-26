@@ -21,19 +21,14 @@ public class Controller implements ActionListener{
 		this.n = new ComplexNumber(this.view.getN().getText());
 		this.m = new ComplexNumber(this.view.getM().getText());
 		
-		int a = this.n.getA();
-		int b = this.n.getB();
-		int c = this.m.getA();
-		int d = this.m.getB();
-		
 		if(event.getSource() == this.view.getSum())			
-			this.view.getResult().setText("(" + (a+c) + "+" + (b+d) + "i)");
+			this.view.getResult().setText(this.n.sum(this.m).toString());
 		
 		if(event.getSource() == this.view.getMinus())			
-			this.view.getResult().setText("(" + (a-c) + "+" + (b-d) + "i)");
+			this.view.getResult().setText(this.n.subtraction(this.m).toString());
 		
 		if(event.getSource() == this.view.getMultiplication())
-			this.view.getResult().setText("(" + (a*c - b*d) + "+" + (a*d + b*c) + "i)");
+			this.view.getResult().setText(this.n.multiplication(this.m).toString());
 		
 	}
 	
